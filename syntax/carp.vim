@@ -18,12 +18,23 @@ else
   setlocal iskeyword=33,35-39,42-58,60-90,94,95,97-122,124,126,_
 endif
 
+syn keyword carpSyntax def defn let do if while ref address set! the
+syn keyword carpSyntax defmacro dynamic quote car cdr cons list array expand
+syn keyword carpSyntax deftype register system-include register-type
+syn keyword carpSyntax defmodule copy
+
+syn keyword carpFunc Int Float Double Bool String Char Array Fn
+syn keyword carpFunc not or and + - * / = /= >= <= inc dec
+syn keyword carpFunc println print get-line from-string mod seed random
+syn keyword carpFunc random-between str mask delete append count duplicate
+syn keyword carpFunc cstr chars from-chars to-int from-int sin cos sqrt acos
+syn keyword carpFunc atan2 exit time srand
 
 syn match carpSymbol    ,\k+,  contained
 syn match carpTodo /\v<(FIXME|NOTE|TODO|OPTIMIZE)/ containedin=carpComment,carpString
 
 syn cluster carpNormal  contains=carpSyntax,carpFunc,carpDelimiter
-syn cluster carpQuotedStuff  contains=carpSymbol,carpAtom
+syn cluster carpQuotedStuff  contains=carpSymbol
 syn cluster carpQuotedOrNormal  contains=carpDelimiter
 
 syn region carpQuotedStruc start="("rs=s+1 end=")"re=e-1     contains=@carpQuotedStuff,@carpQuotedOrNormal contained
@@ -49,13 +60,6 @@ syn match carpChar    "\<\\.\w\@!"
 
 syn cluster carpNormal  add=carpNumber,carpBoolean,carpChar
 syn cluster carpQuotedOrNormal  add=carpNumber,carpBoolean
-
-syn region carpQuoted matchgroup=Delimiter start="['`]" end=![ \t()\[\]";]!me=e-1 contains=@carpQuotedStuff,@carpQuotedOrNormal
-syn region carpQuoted matchgroup=Delimiter start="['`](" matchgroup=Delimiter end=")" contains=@carpQuotedStuff,@carpQuotedOrNormal
-syn region carpQuoted matchgroup=Delimiter start="['`]\?#(" matchgroup=Delimiter end=")" contains=@carpQuotedStuff,@carpQuotedOrNormal
-
-syn region carpQuoted matchgroup=Delimiter start="#['`]"rs=s+2 end=![ \t()\[\]";]!re=e-1,me=e-1 contains=@carpQuotedStuff,@carpQuotedOrNormal
-syn region carpQuoted matchgroup=Delimiter start="#['`]("rs=s+3 matchgroup=Delimiter end=")"re=e-1 contains=@carpQuotedStuff,@carpQuotedOrNormal
 
 syn match carpComment /;.*$/ contains=@Spell
 
