@@ -15,7 +15,7 @@ pathogen goes like this:
 
 ```bash
 cd ~/.vim/bundle
-git clone git@github.com:carp-lang/carp-vim.git
+git clone git@github.com:hellerve/carp-vim.git
 ```
 
 ### Manual
@@ -26,7 +26,7 @@ The "installation" process should look something like this on Unix-based
 OSs:
 
 ```bash
-git clone https://github.com/carp-lang/carp-vim.git
+git clone git@github.com:hellerve/carp-vim.git
 cd carp-vim
 cp -r ftdetect ~/.vim
 cp -r syntax ~/.vim

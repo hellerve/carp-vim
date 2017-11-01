@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:     Carp
 " Maintainer:   Veit Heller <veit@veitheller.de>
-" URL:          http://github.com/carp-lang/carp-vim.git
+" URL:          http://github.com/hellerve/carp-vim.git
 " Description:  Contains all of the keywords in #lang carp
 
 if exists("b:current_syntax")
@@ -58,10 +58,17 @@ syn keyword carpBoolean  true false
 
 syn match carpChar    "\<\\.\w\@!"
 
+syn region carpQuoted matchgroup=Delimiter start="['`]" end=![ \t()\[\]";]!me=e-1 contains=@carpQuotedStuff,@carpQuotedOrNormal
+syn region carpQuoted matchgroup=Delimiter start="['`](" matchgroup=Delimiter end=")" contains=@carpQuotedStuff,@carpQuotedOrNormal
+syn region carpQuoted matchgroup=Delimiter start="['`]\?#(" matchgroup=Delimiter end=")" contains=@carpQuotedStuff,@carpQuotedOrNormal
+
 syn cluster carpNormal  add=carpNumber,carpBoolean,carpChar
 syn cluster carpQuotedOrNormal  add=carpNumber,carpBoolean
 
 syn match carpComment /;.*$/ contains=@Spell
+
+syn region carpQuoted matchgroup=Delimiter start="#['`]"rs=s+2 end=![ \t()\[\]";]!re=e-1,me=e-1 contains=@carpQuotedStuff,@carpQuotedOrNormal
+syn region carpQuoted matchgroup=Delimiter start="#['`]("rs=s+3 matchgroup=Delimiter end=")"re=e-1 contains=@carpQuotedStuff,@carpQuotedOrNormal
 
 syn cluster carpNormal  add=carpQuoted,carpComment
 syn cluster carpQuotedOrNormal  add=carpComment
