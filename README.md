@@ -15,7 +15,7 @@ pathogen goes like this:
 
 ```bash
 cd ~/.vim/bundle
-git clone git://github.com:carp-lang/carp-vim.git
+git clone git@github.com:carp-lang/carp-vim.git
 ```
 
 ### Manual
