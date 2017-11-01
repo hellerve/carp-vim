@@ -13,7 +13,7 @@ Probably the most handy way to install the Carp vim plugin is by using
 [pathogen](https://github.com/tpope/vim-pathogen). Installation using
 pathogen goes like this:
 
-````bash
+```bash
 cd ~/.vim/bundle
 git clone git://github.com:carp-lang/carp-vim.git
 ```
