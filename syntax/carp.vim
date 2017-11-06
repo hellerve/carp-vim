@@ -8,8 +8,6 @@ if exists("b:current_syntax")
   finish
 endif
 
-syn case ignore
-
 syn match carpError ,[]})],
 
 if version < 600
