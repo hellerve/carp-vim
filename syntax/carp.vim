@@ -21,12 +21,12 @@ syn keyword carpSyntax defmacro dynamic quote car cdr cons list array expand
 syn keyword carpSyntax deftype register system-include register-type
 syn keyword carpSyntax defmodule copy
 
-syn keyword carpFunc Int Float Double Bool String Char Array Fn
-syn keyword carpFunc not or and + - * / = /= >= <= inc dec
+syn keyword carpFunc Int Float Double Bool String Char Array Fn Ref
+syn keyword carpFunc not or and + - * / = /= >= <= > < inc dec
 syn keyword carpFunc println print get-line from-string mod seed random
 syn keyword carpFunc random-between str mask delete append count duplicate
 syn keyword carpFunc cstr chars from-chars to-int from-int sin cos sqrt acos
-syn keyword carpFunc atan2 exit time srand
+syn keyword carpFunc atan2 exit time srand for cond floor
 
 
 syn match carpSymbol ,\k+,  contained
