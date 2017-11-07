@@ -26,7 +26,7 @@ syn keyword carpFunc not or and + - * / = /= >= <= > < inc dec
 syn keyword carpFunc println print get-line from-string mod seed random
 syn keyword carpFunc random-between str mask delete append count duplicate
 syn keyword carpFunc cstr chars from-chars to-int from-int sin cos sqrt acos
-syn keyword carpFunc atan2 exit time srand for cond floor
+syn keyword carpFunc atan2 exit time srand for cond floor abs
 
 
 syn match carpSymbol ,\k+,  contained
