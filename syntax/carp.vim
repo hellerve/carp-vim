@@ -59,8 +59,8 @@ syn region carpString start=/\%(\\\)\@<!"/ skip=/\\[\\"]/ end=/"/
 syn cluster carpNormal          add=carpError,carpStruc,carpString
 syn cluster carpQuotedOrNormal  add=carpString
 
-syn match carpNumber    "\<[-+]\?\(\d\+\|\d\+#*\.\|\d*\.\d\+\)#*\(/\d\+#*\)\?\>" contains=carpContainedNumberError
-syn match carpNumber    "\<[-+]\?\d\+/\d\+\>" contains=carpContainedNumberError
+syn match carpNumber    "\<[-+]\?\(\d\+\|\d\+#*\.\|\d*\.\d\+\)#*\(/\d\+#*\)\?[lf]\?\>" contains=carpContainedNumberError
+syn match carpNumber    "\<[-+]\?\d\+/\d\+[lf]\?\>" contains=carpContainedNumberError
 
 
 syn keyword carpBoolean  true false
