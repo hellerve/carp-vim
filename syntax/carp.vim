@@ -17,8 +17,8 @@ else
 endif
 
 syn keyword carpSyntax def defn let do if while ref address set! the
-syn keyword carpSyntax defmacro dynamic quote car cdr cons list array expand
-syn keyword carpSyntax deftype register system-include register-type
+syn keyword carpSyntax defmacro defdynamic quote car cdr cons list array
+syn keyword carpSyntax expand deftype register system-include register-type
 syn keyword carpSyntax defmodule copy
 
 syn keyword carpFunc Int Float Double Bool String Char Array Fn Ref
@@ -26,7 +26,11 @@ syn keyword carpFunc not or and + - * / = /= >= <= > < inc dec
 syn keyword carpFunc println print get-line from-string mod seed random
 syn keyword carpFunc random-between str mask delete append count duplicate
 syn keyword carpFunc cstr chars from-chars to-int from-int sin cos sqrt acos
-syn keyword carpFunc atan2 exit time srand for cond floor abs
+syn keyword carpFunc atan2 exit time srand for cond floor abs neg to-float
+syn keyword carpFunc from-float tan asin atan cosh sinh tanh exp frexp ldexp
+syn keyword carpFunc log log10 modf pow ceil clamp approx refstr foreach
+syn keyword carpFunc => ==> repeat nth replicate range raw aset aset! count
+syn keyword carpFunc push-back pop-back sort index-of element-count
 
 
 syn match carpSymbol ,\k+,  contained
