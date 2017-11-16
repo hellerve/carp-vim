@@ -21,7 +21,7 @@ syn keyword carpSyntax defmacro defdynamic quote car cdr cons list array
 syn keyword carpSyntax expand deftype register system-include register-type
 syn keyword carpSyntax defmodule copy
 
-syn keyword carpFunc Int Float Double Bool String Char Array Fn Ref
+syn keyword carpFunc Int Float Double Bool String Char Array Fn Ref Long
 syn keyword carpFunc not or and + - * / = /= >= <= > < inc dec
 syn keyword carpFunc println print get-line from-string mod seed random
 syn keyword carpFunc random-between str mask delete append count duplicate
