@@ -19,7 +19,10 @@ endif
 syn keyword carpSyntax def defn let do if while ref address set! the
 syn keyword carpSyntax defmacro defdynamic quote car cdr cons list array
 syn keyword carpSyntax expand deftype register system-include register-type
-syn keyword carpSyntax defmodule copy use
+syn keyword carpSyntax defmodule copy use module defalias definterface eval
+syn keyword carpSyntax expand instantiate type info help quit env build run
+syn keyword carpSyntax cat use project-set! local-include system-include
+syn keyword carpSyntax add-cflag add-lib project load reload
 
 syn keyword carpFunc Int Float Double Bool String Char Array Fn Ref Long
 syn keyword carpFunc not or and + - * / = /= >= <= > < inc dec
