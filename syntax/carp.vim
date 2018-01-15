@@ -19,14 +19,18 @@ endif
 syn keyword carpSyntax def defn let do if while ref address set! the
 syn keyword carpSyntax defmacro dynamic quote car cdr cons list array expand
 syn keyword carpSyntax deftype register system-include register-type
-syn keyword carpSyntax defmodule copy
+syn keyword carpSyntax defmodule copy let-do when break fmt
 
 syn keyword carpFunc Int Float Double Bool String Char Array Fn Ref
 syn keyword carpFunc not or and + - * / = /= >= <= > < inc dec
 syn keyword carpFunc println print get-line from-string mod seed random
 syn keyword carpFunc random-between str mask delete append count duplicate
 syn keyword carpFunc cstr chars from-chars to-int from-int sin cos sqrt acos
-syn keyword carpFunc atan2 exit time srand for cond floor abs
+syn keyword carpFunc atan2 exit time srand for cond floor abs sort-with
+syn keyword carpFunc subarray prefix-array suffix-array reverse sum min max
+syn keyword carpFunc first last reduce format zero read-file bit-shift-left
+syn keyword carpFunc bit-shift-right bit-and bit-or-bit-xor bit-not safe-add
+syn keyword carpFunc safe-sub safe-mul even? odd? cmp
 
 
 syn match carpSymbol ,\k+,  contained
