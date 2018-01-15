@@ -17,11 +17,14 @@ else
 endif
 
 syn keyword carpSyntax def defn let do if while ref address set! the
-syn keyword carpSyntax defmacro dynamic quote car cdr cons list array expand
-syn keyword carpSyntax deftype register system-include register-type
-syn keyword carpSyntax defmodule copy let-do when break fmt
+syn keyword carpSyntax defmacro defdynamic quote car cdr cons list array
+syn keyword carpSyntax expand deftype register system-include register-type
+syn keyword carpSyntax defmodule copy use module defalias definterface eval
+syn keyword carpSyntax expand instantiate type info help quit env build run
+syn keyword carpSyntax cat use project-set! local-include system-include
+syn keyword carpSyntax add-cflag add-lib project load reload
 
-syn keyword carpFunc Int Float Double Bool String Char Array Fn Ref
+syn keyword carpFunc Int Float Double Bool String Char Array Fn Ref Long
 syn keyword carpFunc not or and + - * / = /= >= <= > < inc dec
 syn keyword carpFunc println print get-line from-string mod seed random
 syn keyword carpFunc random-between str mask delete append count duplicate
@@ -31,6 +34,11 @@ syn keyword carpFunc subarray prefix-array suffix-array reverse sum min max
 syn keyword carpFunc first last reduce format zero read-file bit-shift-left
 syn keyword carpFunc bit-shift-right bit-and bit-or-bit-xor bit-not safe-add
 syn keyword carpFunc safe-sub safe-mul even? odd? cmp
+syn keyword carpFunc atan2 exit time srand for cond floor abs neg to-float
+syn keyword carpFunc from-float tan asin atan cosh sinh tanh exp frexp ldexp
+syn keyword carpFunc log log10 modf pow ceil clamp approx refstr foreach
+syn keyword carpFunc => ==> repeat nth replicate range raw aset aset! count
+syn keyword carpFunc push-back pop-back sort index-of element-count
 
 
 syn match carpSymbol ,\k+,  contained
@@ -59,8 +67,8 @@ syn region carpString start=/\%(\\\)\@<!"/ skip=/\\[\\"]/ end=/"/
 syn cluster carpNormal          add=carpError,carpStruc,carpString
 syn cluster carpQuotedOrNormal  add=carpString
 
-syn match carpNumber    "\<[-+]\?\(\d\+\|\d\+#*\.\|\d*\.\d\+\)#*\(/\d\+#*\)\?\>" contains=carpContainedNumberError
-syn match carpNumber    "\<[-+]\?\d\+/\d\+\>" contains=carpContainedNumberError
+syn match carpNumber    "\<[-+]\?\(\d\+\|\d\+#*\.\|\d*\.\d\+\)#*\(/\d\+#*\)\?[lf]\?\>" contains=carpContainedNumberError
+syn match carpNumber    "\<[-+]\?\d\+/\d\+[lf]\?\>" contains=carpContainedNumberError
 
 
 syn keyword carpBoolean  true false
