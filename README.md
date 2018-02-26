@@ -1,9 +1,14 @@
 # carp-vim
 
-This repository contains a Vim plugin for Carp that is only
-capable of syntax highlighting at the moment. It is largely
+This repository contains a Vim plugin for Carp . It is largely
 based on [the racket vim plugin for pathogen](https://github.com/wlangstroth/vim-racket),
 with a few extensions, e.g. for list comprehensions.
+
+To enable syntax checking via syntastic, add the following line to your `.vimrc`:
+
+```vim
+let g:syntastic_carp_checkers = ['carp']
+```
 
 ## Installation
 
