@@ -30,10 +30,10 @@ syn match carpSyntax "\vc(a|d){1,4}r"
 
 syn keyword carpFunc Int Float Double Bool String Char Array Fn Ref Long λ
 syn keyword carpFunc not or and + - * / = /= >= <= > < inc dec
-syn keyword carpFunc println print get-line from-string mod seed random
+syn keyword carpFunc println print get-line from-string mod random
 syn keyword carpFunc random-between str mask delete append count duplicate
 syn keyword carpFunc cstr chars from-chars to-int from-int sin cos sqrt acos
-syn keyword carpFunc atan2 exit time srand for cond floor abs sort-with
+syn keyword carpFunc atan2 exit time seed-random for cond floor abs sort-with
 syn keyword carpFunc subarray prefix-array suffix-array reverse sum min max
 syn keyword carpFunc first last reduce format zero read-file bit-shift-left
 syn keyword carpFunc bit-shift-right bit-and bit-or bit-xor bit-not safe-add
