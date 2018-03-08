@@ -29,6 +29,7 @@ syn keyword carpSyntax str* println* break
 syn match carpSyntax "\vc(a|d){1,4}r"
 
 syn keyword carpFunc Int Float Double Bool String Char Array Fn Ref Long λ
+syn keyword carpFunc Pattern
 syn keyword carpFunc not or and + - * / = /= >= <= > < inc dec
 syn keyword carpFunc println print get-line from-string mod random
 syn keyword carpFunc random-between str mask delete append count duplicate
@@ -43,8 +44,8 @@ syn keyword carpFunc log-memory-balance! memory-logged assert-balanced trace
 syn keyword carpFunc pi e swap! update! char-at tail head split-by words lines
 syn keyword carpFunc pad-left pad-right count-char empty? random-sized substring
 syn keyword carpFunc prefix-string suffix-string starts-with? ends-with?
-syn keyword carpFunc string-join free sleep-seconds sleep-micros
-syn keyword carpFunc neg to-float
+syn keyword carpFunc string-join free sleep-seconds sleep-micros substitute
+syn keyword carpFunc neg to-float match matches? find global-match match-str
 syn keyword carpFunc from-float tan asin atan cosh sinh tanh exp frexp ldexp
 syn keyword carpFunc log log10 modf pow ceil clamp approx refstr foreach
 syn keyword carpFunc => ==> repeat nth replicate range raw aset aset!
@@ -73,8 +74,9 @@ syn region carpStruc matchgroup=Delimiter start="("rs=s+1 matchgroup=Delimiter e
 syn region carpStruc matchgroup=Delimiter start="\["rs=s+1 matchgroup=Delimiter end="\]"re=e-1 contains=@carpNormal
 
 syn region carpString start=/\%(\\\)\@<!"/ skip=/\\[\\"]/ end=/"/
+syn region carpPattern start=/\%(\\\)\@<!\#"/ skip=/\\[\\"]/ end=/"/
 
-syn cluster carpNormal          add=carpError,carpStruc,carpString
+syn cluster carpNormal          add=carpError,carpStruc,carpString,carpPattern
 syn cluster carpQuotedOrNormal  add=carpString
 
 syn match carpNumber    "\<[-+]\?\(\d\+\|\d\+#*\.\|\d*\.\d\+\)#*\(/\d\+#*\)\?[lf]\?\>" contains=carpContainedNumberError
@@ -114,6 +116,7 @@ if version >= 508 || !exists("carp_syntax_init")
   HiLink carpCopy               Function
 
   HiLink carpString             String
+  HiLink carpPattern            String
   HiLink carpChar               Character
   HiLink carpBoolean            Boolean
 
