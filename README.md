@@ -1,8 +1,7 @@
 # carp-vim
 
-This repository contains a Vim plugin for Carp . It is largely
-based on [the racket vim plugin for pathogen](https://github.com/wlangstroth/vim-racket),
-with a few extensions, e.g. for list comprehensions.
+This repository contains a Vim plugin for Carp. It is largely
+based on [the racket vim plugin for pathogen](https://github.com/wlangstroth/vim-racket).
 
 To enable syntax checking via syntastic, add the following line to your `.vimrc`:
 
