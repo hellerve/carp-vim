@@ -56,6 +56,9 @@ syn keyword carpFunc log log10 modf pow ceil clamp approx refstr foreach
 syn keyword carpFunc => ==> repeat nth replicate range raw aset aset!
 syn keyword carpFunc push-back pop-back sort index-of element-count
 syn keyword carpFunc apply unsafe-from from just? nothing? ptr from-ptr 
+syn keyword carpFunc map and-then unwrap-or-zero or-else unwrap-or-else
+syn keyword carpFunc unsafe-from-success from-success unsafe-from-error
+syn keyword carpFunc from-error to-maybe success? error? to-result
 syn keyword carpFunc create create-with-len put put! get-with-default get
 syn keyword carpFunc get-maybe update update-with-default contains? remove
 syn keyword carpFunc all? for-each endo-map kv-reduce vals keys from-array
