@@ -55,6 +55,8 @@ syn keyword carpFunc car cdr caar cadr cdar cddr caaar caadr cadar cdaar caddr
 syn keyword carpFunc cdadr cddar cdddr caaaar caaadr caaddr cadaar cadadr caddar
 syn keyword carpFunc cadddr cdaaar cdaadr cdadar cdaddr cddaar cddadr cdddar 
 syn keyword carpFunc cddddr
+syn keyword carpFunc private? hidden?
+syn keyword carpFunc print-sig print-doc
 
 syn match carpSymbol ,\k+,  contained
 syn match carpTodo /\v<(FIXME|NOTE|TODO|OPTIMIZE)/ containedin=carpComment,carpString
