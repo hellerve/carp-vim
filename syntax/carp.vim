@@ -32,7 +32,7 @@ syn keyword carpSyntax deftest
 syn match carpSyntax "\vc(a|d){1,4}r"
 
 syn keyword carpFunc Int Float Double Bool String Char Array Fn Ref Long λ
-syn keyword carpFunc Maybe Map Result
+syn keyword carpFunc Maybe Map Result Set
 syn keyword carpFunc Pattern
 syn keyword carpFunc not or and + - * / = /= >= <= > < inc dec
 syn keyword carpFunc println print get-line from-string mod random
@@ -55,6 +55,10 @@ syn keyword carpFunc from-float tan asin atan cosh sinh tanh exp frexp ldexp
 syn keyword carpFunc log log10 modf pow ceil clamp approx refstr foreach
 syn keyword carpFunc => ==> repeat nth replicate range raw aset aset!
 syn keyword carpFunc push-back pop-back sort index-of element-count
+syn keyword carpFunc create create-with-len put put! get-with-default get
+syn keyword carpFunc get-maybe update update-with-default contains? remove
+syn keyword carpFunc all? for-each endo-map kv-reduce vals keys from-array
+syn keyword carpFunc to-array subset? union difference
 syn keyword carpFunc car cdr caar cadr cdar cddr caaar caadr cadar cdaar caddr
 syn keyword carpFunc cdadr cddar cdddr caaaar caaadr caaddr cadaar cadadr caddar
 syn keyword carpFunc cadddr cdaaar cdaadr cdadar cdaddr cddaar cddadr cdddar 
