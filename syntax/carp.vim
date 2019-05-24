@@ -62,7 +62,7 @@ syn keyword carpFunc from-error to-maybe success? error? to-result
 syn keyword carpFunc create create-with-len put put! get-with-default get
 syn keyword carpFunc get-maybe update update-with-default contains? remove
 syn keyword carpFunc all? for-each endo-map kv-reduce vals keys from-array
-syn keyword carpFunc to-array subset? union difference
+syn keyword carpFunc to-array subset? union difference intersection
 syn keyword carpFunc init-from-refs
 syn keyword carpFunc car cdr caar cadr cdar cddr caaar caadr cadar cdaar caddr
 syn keyword carpFunc cdadr cddar cdddr caaaar caaadr caaddr cadaar cadadr caddar
