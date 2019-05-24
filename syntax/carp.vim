@@ -26,7 +26,8 @@ syn keyword carpSyntax add-cflag add-lib project load reload let-do ignore
 syn keyword carpSyntax fmt mac-only linux-only windows-only use-all when
 syn keyword carpSyntax unless defn-do comment forever-do case and* or*
 syn keyword carpSyntax str* println* break doc sig hidden private
-syn keyword carpSyntax while-do
+syn keyword carpSyntax while-do const-assert save-docs defproject
+syn keyword carpSyntax relative-include not-on-windows load-and-use
 syn match carpSyntax "\vc(a|d){1,4}r"
 
 syn keyword carpFunc Int Float Double Bool String Char Array Fn Ref Long λ
