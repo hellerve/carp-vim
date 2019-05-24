@@ -28,6 +28,7 @@ syn keyword carpSyntax unless defn-do comment forever-do case and* or*
 syn keyword carpSyntax str* println* break doc sig hidden private
 syn keyword carpSyntax while-do const-assert save-docs defproject
 syn keyword carpSyntax relative-include not-on-windows load-and-use
+syn keyword carpSyntax deftest
 syn match carpSyntax "\vc(a|d){1,4}r"
 
 syn keyword carpFunc Int Float Double Bool String Char Array Fn Ref Long λ
@@ -59,6 +60,8 @@ syn keyword carpFunc cadddr cdaaar cdaadr cdadar cdaddr cddaar cddadr cdddar
 syn keyword carpFunc cddddr
 syn keyword carpFunc private? hidden?
 syn keyword carpFunc print-sig print-doc
+syn keyword carpFunc assert-op assert-equal assert-not-equal assert-true
+syn keyword carpFunc assert-false assert-exit print-test-results with-test
 
 syn match carpSymbol ,\k+,  contained
 syn match carpTodo /\v<(FIXME|NOTE|TODO|OPTIMIZE)/ containedin=carpComment,carpString
