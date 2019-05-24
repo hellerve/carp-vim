@@ -51,7 +51,10 @@ syn keyword carpFunc from-float tan asin atan cosh sinh tanh exp frexp ldexp
 syn keyword carpFunc log log10 modf pow ceil clamp approx refstr foreach
 syn keyword carpFunc => ==> repeat nth replicate range raw aset aset!
 syn keyword carpFunc push-back pop-back sort index-of element-count
-
+syn keyword carpFunc car cdr caar cadr cdar cddr caaar caadr cadar cdaar caddr
+syn keyword carpFunc cdadr cddar cdddr caaaar caaadr caaddr cadaar cadadr caddar
+syn keyword carpFunc cadddr cdaaar cdaadr cdadar cdaddr cddaar cddadr cdddar 
+syn keyword carpFunc cddddr
 
 syn match carpSymbol ,\k+,  contained
 syn match carpTodo /\v<(FIXME|NOTE|TODO|OPTIMIZE)/ containedin=carpComment,carpString
