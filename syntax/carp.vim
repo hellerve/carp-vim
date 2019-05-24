@@ -45,6 +45,7 @@ syn keyword carpFunc bit-shift-right bit-and bit-or bit-xor bit-not safe-add
 syn keyword carpFunc safe-sub safe-mul even? odd? cmp allocate repeat-indexed
 syn keyword carpFunc sanitize-addresses memory-balance reset-memory-balance!
 syn keyword carpFunc log-memory-balance! memory-logged assert-balanced trace
+syn keyword carpFunc assert
 syn keyword carpFunc pi e swap! update! char-at tail head split-by words lines
 syn keyword carpFunc pad-left pad-right count-char empty? random-sized substring
 syn keyword carpFunc prefix-string suffix-string starts-with? ends-with?
