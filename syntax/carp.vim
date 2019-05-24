@@ -62,6 +62,7 @@ syn keyword carpFunc private? hidden?
 syn keyword carpFunc print-sig print-doc
 syn keyword carpFunc assert-op assert-equal assert-not-equal assert-true
 syn keyword carpFunc assert-false assert-exit print-test-results with-test
+syn keyword carpFunc dir-from-path file-from-path
 
 syn match carpSymbol ,\k+,  contained
 syn match carpTodo /\v<(FIXME|NOTE|TODO|OPTIMIZE)/ containedin=carpComment,carpString
