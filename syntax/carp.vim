@@ -29,6 +29,7 @@ syn keyword carpSyntax str* println* break doc sig hidden private
 syn match carpSyntax "\vc(a|d){1,4}r"
 
 syn keyword carpFunc Int Float Double Bool String Char Array Fn Ref Long λ
+syn keyword carpFunc Maybe Map Result
 syn keyword carpFunc Pattern
 syn keyword carpFunc not or and + - * / = /= >= <= > < inc dec
 syn keyword carpFunc println print get-line from-string mod random
