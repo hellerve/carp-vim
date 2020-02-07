@@ -109,7 +109,7 @@ syn match carpNumber    "\<[-+]\?\d\+/\d\+[lfb]\?\>" contains=carpContainedNumbe
 
 syn keyword carpBoolean  true false
 
-syn match carpChar    "\<\\.\w\@!"
+syn match carpChar    "\\."
 
 syn region carpQuoted matchgroup=Delimiter start="['`]" end=![ \t()\[\]";]!me=e-1 contains=@carpQuotedStuff,@carpQuotedOrNormal
 syn region carpQuoted matchgroup=Delimiter start="['`](" matchgroup=Delimiter end=")" contains=@carpQuotedStuff,@carpQuotedOrNormal
