@@ -125,7 +125,7 @@ syn region carpQuoted matchgroup=Delimiter start="#['`]("rs=s+3 matchgroup=Delim
 syn cluster carpNormal  add=carpQuoted,carpComment
 syn cluster carpQuotedOrNormal  add=carpComment
 
-syn region carpStringRegion matchgroup=pythonStrFormat start="{" end="\%(![rsa]\)\=\%(:\%({\%(\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*\|\d\+\)}\|\%([^}]\=[<>=^]\)\=[ +-]\=#\=0\=\d*,\=\%(\.\d\+\)\=[bcdeEfFgGnosxX%]\=\)\=\)\=}" extend contained containedin=carpString contains=carpStringRegion,@carpNormal
+syn region carpStringRegion matchgroup=pythonStrFormat start="{" end="}" extend contained containedin=carpString contains=carpStringRegion,@carpNormal
 syn match carpStringEscRegion "{{\|}}" contained containedin=carpString
 
 syn sync match matchPlace grouphere NONE "^[^ \t]"
