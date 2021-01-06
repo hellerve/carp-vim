@@ -126,6 +126,7 @@ syn cluster carpNormal  add=carpQuoted,carpComment
 syn cluster carpQuotedOrNormal  add=carpComment
 
 syn region carpStringRegion matchgroup=pythonStrFormat start="{" end="\%(![rsa]\)\=\%(:\%({\%(\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*\|\d\+\)}\|\%([^}]\=[<>=^]\)\=[ +-]\=#\=0\=\d*,\=\%(\.\d\+\)\=[bcdeEfFgGnosxX%]\=\)\=\)\=}" extend contained containedin=carpString contains=carpStringRegion,@carpNormal
+syn match carpStringEscRegion "{{\|}}" contained containedin=carpString
 
 syn sync match matchPlace grouphere NONE "^[^ \t]"
 
@@ -142,6 +143,7 @@ if version >= 508 || !exists("carp_syntax_init")
   HiLink carpCopy               Function
 
   HiLink carpString             String
+  HiLink carpStringEscRegion    String
   HiLink carpPattern            String
   HiLink carpChar               Character
   HiLink carpBoolean            Boolean
