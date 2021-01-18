@@ -29,6 +29,7 @@ syn keyword carpSyntax str* println* break doc sig hidden private
 syn keyword carpSyntax while-do const-assert save-docs defproject
 syn keyword carpSyntax relative-include not-on-windows load-and-use
 syn keyword carpSyntax deftest
+syn keyword carpSyntax quasiquote unquote unquote-splicing
 syn match carpSyntax "\vc(a|d){1,4}r"
 
 syn keyword carpFunc λ
@@ -121,6 +122,13 @@ syn match carpComment /;.*$/ contains=@Spell
 
 syn region carpQuoted matchgroup=Delimiter start="#['`]"rs=s+2 end=![ \t()\[\]";]!re=e-1,me=e-1 contains=@carpQuotedStuff,@carpQuotedOrNormal
 syn region carpQuoted matchgroup=Delimiter start="#['`]("rs=s+3 matchgroup=Delimiter end=")"re=e-1 contains=@carpQuotedStuff,@carpQuotedOrNormal
+
+syn region carpUnquote matchgroup=Delimiter start="%"rs=s+1 end=![ \t\[\]()";]!re=e-1,me=e-1 contained contains=@carpNormal
+syn region carpUnquote matchgroup=Delimiter start="%@"rs=s+2 end=![ \t\[\]()";]!re=e-1,me=e-1 contained contains=@carpNormal
+syn region carpUnquote matchgroup=Delimiter start="%@("rs=s+2 end=")"re=e-1 contained contains=@carpNormal
+syn region carpUnquote matchgroup=Delimiter start="%("rs=s+2 end=")"re=e-1 contained contains=@carpNormal
+
+syn cluster carpQuotedStuff add=carpUnquote
 
 syn cluster carpNormal  add=carpQuoted,carpComment
 syn cluster carpQuotedOrNormal  add=carpComment
