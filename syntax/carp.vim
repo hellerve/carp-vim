@@ -52,7 +52,7 @@ syn keyword carpFunc string-join free sleep-seconds sleep-micros substitute
 syn keyword carpFunc neg to-float match matches? find global-match match-str
 syn keyword carpFunc from-float tan asin atan cosh sinh tanh exp frexp ldexp
 syn keyword carpFunc log log10 modf pow ceil clamp approx refstr foreach
-syn keyword carpFunc => ==> repeat nth replicate range raw aset aset!
+syn keyword carpFunc -> --> => ==> repeat nth replicate range raw aset aset!
 syn keyword carpFunc push-back pop-back sort index-of element-count
 syn keyword carpFunc apply unsafe-from from just? nothing? ptr from-ptr 
 syn keyword carpFunc map and-then unwrap-or-zero or-else unwrap-or-else
