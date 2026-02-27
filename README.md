@@ -3,17 +3,9 @@
 This repository contains a Vim plugin for Carp. It is largely
 based on [the racket vim plugin for pathogen](https://github.com/wlangstroth/vim-racket).
 
-To enable syntax checking via syntastic, add the following line to your `.vimrc`:
-
-```vim
-let g:syntastic_carp_checkers = ['carp']
-```
-
-To enable auto-indentation, if it's not already working, add the following line to your `.virmc`:
-
-```vim
-au FileType carp set lisp
-```
+Syntax checking is supported via [ALE](https://github.com/dense-analysis/ale).
+If you have ALE installed and `carp` is on your `$PATH`, it will run
+`carp --check` asynchronously when you open or save a `.carp` file.
 
 To enable Paredit, if you've already installed the plugin, add the following
 line to your `.vimrc`:
@@ -54,6 +46,5 @@ OSs:
 ```bash
 git clone git@github.com:hellerve/carp-vim.git
 cd carp-vim
-cp -r ftdetect ~/.vim
-cp -r syntax ~/.vim
+cp -r ale_linters ftdetect ftplugin indent syntax ~/.vim
 ```
