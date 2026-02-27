@@ -10,11 +10,7 @@ endif
 
 syn match carpError ,[]})],
 
-if version < 600
-  set iskeyword=33,35-39,42-43,45-58,60-63,65-90,94,95,97-122,124,126,_
-else
-  setlocal iskeyword=33,35-39,42-43,45-58,60-63,65-90,94,95,97-122,124,126,_
-endif
+setlocal iskeyword=33,35-39,42-43,45-58,60-63,65-90,94,95,97-122,124,126,_
 
 syn keyword carpSyntax def defn let do if while ref address set! the
 syn keyword carpSyntax defmacro defdynamic defndynamic quote cons list array fn
@@ -125,7 +121,7 @@ syn region carpQuoted matchgroup=Delimiter start="#['`]("rs=s+3 matchgroup=Delim
 
 syn region carpUnquote matchgroup=Delimiter start="%"rs=s+1 end=![ \t\[\]()";]!re=e-1,me=e-1 contained contains=@carpNormal
 syn region carpUnquote matchgroup=Delimiter start="%@"rs=s+2 end=![ \t\[\]()";]!re=e-1,me=e-1 contained contains=@carpNormal
-syn region carpUnquote matchgroup=Delimiter start="%@("rs=s+2 end=")"re=e-1 contained contains=@carpNormal
+syn region carpUnquote matchgroup=Delimiter start="%@("rs=s+3 end=")"re=e-1 contained contains=@carpNormal
 syn region carpUnquote matchgroup=Delimiter start="%("rs=s+2 end=")"re=e-1 contained contains=@carpNormal
 
 syn cluster carpQuotedStuff add=carpUnquote
@@ -135,39 +131,29 @@ syn cluster carpQuotedOrNormal  add=carpComment
 
 syn sync match matchPlace grouphere NONE "^[^ \t]"
 
-if version >= 508 || !exists("carp_syntax_init")
-  if version < 508
-    let carp_syntax_init = 1
-    command -nargs=+ HiLink hi link <args>
-  else
-    command -nargs=+ HiLink hi def link <args>
-  endif
+hi def link carpSyntax             Statement
+hi def link carpFunc               Function
+hi def link carpCopy               Function
 
-  HiLink carpSyntax             Statement
-  HiLink carpFunc               Function
-  HiLink carpCopy               Function
+hi def link carpString             String
+hi def link carpPattern            String
+hi def link carpChar               Character
+hi def link carpBoolean            Boolean
 
-  HiLink carpString             String
-  HiLink carpPattern            String
-  HiLink carpChar               Character
-  HiLink carpBoolean            Boolean
+hi def link carpNumber             Number
+hi def link carpNumberError        Error
+hi def link carpContainedNumberError Error
 
-  HiLink carpNumber             Number
-  HiLink carpNumberError        Error
-  HiLink carpContainedNumberError Error
+hi def link carpQuoted             Structure
+hi def link carpQuotedStruc        Structure
+hi def link carpSymbol             Structure
+hi def link carpAtom               Structure
 
-  HiLink carpQuoted             Structure
-  HiLink carpQuotedStruc        Structure
-  HiLink carpSymbol             Structure
-  HiLink carpAtom               Structure
+hi def link carpDelimiter          Delimiter
+hi def link carpConstant           Constant
 
-  HiLink carpDelimiter          Delimiter
-  HiLink carpConstant           Constant
-
-  HiLink carpTodo               Todo
-  HiLink carpComment            Comment
-  HiLink carpError              Error
-  delcommand HiLink
-endif
+hi def link carpTodo               Todo
+hi def link carpComment            Comment
+hi def link carpError              Error
 
 let b:current_syntax = "carp"
