@@ -9,6 +9,19 @@ To enable syntax checking via syntastic, add the following line to your `.vimrc`
 let g:syntastic_carp_checkers = ['carp']
 ```
 
+To enable auto-indentation, if it's not already working, add the following line to your `.virmc`:
+
+```vim
+au FileType carp set lisp
+```
+
+To enable Paredit, if you've already installed the plugin, add the following
+line to your `.vimrc`:
+
+```vim
+au FileType carp call PareditInitBuffer()
+```
+
 ## Installation
 
 ### Pathogen
@@ -20,6 +33,15 @@ pathogen goes like this:
 ```bash
 cd ~/.vim/bundle
 git clone git@github.com:hellerve/carp-vim.git
+```
+
+### Vim-Plug
+
+To install using [Vim-Plug](https://github.com/junegunn/vim-plug), add this line between the `plug#begin` and `plug#end`
+calls in your `.vimrc` or `init.vim` in Neovim.
+
+```vim
+Plug 'hellerve/carp-vim'
 ```
 
 ### Manual
